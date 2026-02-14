@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap");
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== GLOBAL FONT SYSTEM ===== */
+
+:root {
+  --font-main: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  letter-spacing: -0.01em;
+}
+
+/* Typography scale */
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+}
