@@ -3,7 +3,7 @@ import '@/App.css'
 import Hero from './components/Hero'
 import About from './components/About'
 import Navbar from "./components/Navbar";
-import GlobalCursorGlow from "@/components/globalcursorglow";
+import GlobalCursorGlow from "@/components/GlobalCursorGlow";
 import ProblemSolving from "@/components/ProblemSolving"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
