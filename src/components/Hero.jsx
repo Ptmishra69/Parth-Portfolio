@@ -17,7 +17,7 @@ export default function Hero() {
   const [index, setIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
 
-  const resumeFile = "/Parth_Mishra_Resume.pdf"; // place inside public/
+  const resumeFile = "/Parth_Mishra_Resume.pdf";
 
   /* ================= Typing Animation ================= */
   useEffect(() => {
@@ -30,7 +30,6 @@ export default function Hero() {
 
       if (charIndex === word.length) {
         clearInterval(typing);
-
         setTimeout(() => {
           setIndex((prev) => (prev + 1) % roles.length);
         }, word === "Parth Mishra" ? 2000 : 1000);
@@ -40,7 +39,7 @@ export default function Hero() {
     return () => clearInterval(typing);
   }, [index]);
 
-  /* ================= Smooth Scroll ================= */
+  /* ================= Scroll to Contact ================= */
   const scrollToContact = () => {
     const section = document.getElementById("contact");
     if (!section) return;
@@ -52,8 +51,9 @@ export default function Hero() {
   };
 
   return (
-    <div
-      className="min-h-screen relative overflow-x-hidden transition-all duration-700"
+    <section
+      id="hero"
+      className="relative min-h-screen w-full overflow-hidden"
       style={{ background: theme.bg, color: theme.text }}
     >
       {/* ===== DARK ATMOSPHERE ===== */}
@@ -76,17 +76,32 @@ export default function Hero() {
         </>
       )}
 
-      {/* ================= HERO ================= */}
-      <section
-        id="hero"
-        className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-14 px-8 md:px-20 lg:px-32 py-10"
+      {/* ===== CONTENT WRAPPER ===== */}
+      <div
+        className="
+          relative z-10
+          min-h-screen
+          w-full
+          grid grid-cols-1 md:grid-cols-2
+          items-center
+          gap-14
+          px-8 md:px-20 lg:px-32
+          py-16
+        "
       >
-        {/* LEFT */}
-        <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 className="text-6xl font-bold">Hello, I'm</h1>
+        {/* ================= LEFT ================= */}
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center md:text-left"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+            Hello, I&apos;m
+          </h1>
 
           <h2
-            className="text-6xl font-bold mt-3"
+            className="text-5xl md:text-6xl font-bold mt-3 leading-tight"
             style={
               mode === "dark"
                 ? {
@@ -101,7 +116,7 @@ export default function Hero() {
           </h2>
 
           <p
-            className="mt-6 text-lg max-w-[640px]"
+            className="mt-6 text-base md:text-lg max-w-[640px] mx-auto md:mx-0 leading-relaxed"
             style={{ color: theme.paragraph }}
           >
             Full-Stack Developer and competitive programmer with strong DSA
@@ -109,10 +124,9 @@ export default function Hero() {
             and AI-powered products.
           </p>
 
-          {/* BUTTONS */}
+          {/* ===== BUTTONS ===== */}
           <div className="flex gap-6 mt-8 justify-center md:justify-start flex-wrap">
-
-            {/* PRIMARY → CONTACT */}
+            {/* Hire Me */}
             <button
               onClick={scrollToContact}
               onMouseMove={magneticMove}
@@ -128,7 +142,7 @@ export default function Hero() {
               Hire Me
             </button>
 
-            {/* SECONDARY → DOWNLOAD */}
+            {/* Download Resume */}
             <a
               href={resumeFile}
               download="Parth_Mishra_Resume.pdf"
@@ -153,12 +167,16 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* RIGHT IMAGE */}
-        <motion.div whileHover={{ scale: 1.05 }} className="flex justify-center">
+        {/* ================= RIGHT IMAGE ================= */}
+        <motion.div
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.35 }}
+          className="flex justify-center"
+        >
           <img
             src="/logo2.png"
             alt="profile"
-            className="rounded-[30px] w-[340px] md:w-[420px]"
+            className="rounded-[30px] w-[320px] sm:w-[360px] md:w-[420px]"
             style={{
               border:
                 mode === "dark"
@@ -171,7 +189,7 @@ export default function Hero() {
             }}
           />
         </motion.div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
