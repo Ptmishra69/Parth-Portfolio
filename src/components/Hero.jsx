@@ -96,6 +96,8 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="text-center md:text-left"
         >
+
+
           <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             Hello, I&apos;m
           </h1>
@@ -169,8 +171,9 @@ export default function Hero() {
 
         {/* ================= RIGHT IMAGE ================= */}
         <motion.div
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           whileHover={{ scale: 1.04 }}
-          transition={{ duration: 0.35 }}
           className="flex justify-center"
         >
           <img
@@ -184,8 +187,8 @@ export default function Hero() {
                   : `4px solid ${theme.soft}`,
               boxShadow:
                 mode === "dark"
-                  ? "0 0 35px rgba(68,119,148,0.5)"
-                  : "0 0 30px rgba(122,74,0,0.4)",
+                  ? "0 0 50px rgba(68,119,148,0.4), 0 0 100px rgba(68,119,148,0.15)"
+                  : "0 0 40px rgba(122,74,0,0.3), 0 0 80px rgba(122,74,0,0.1)",
             }}
           />
         </motion.div>

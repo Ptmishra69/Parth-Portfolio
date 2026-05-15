@@ -13,21 +13,41 @@ export default function Contact() {
   const [message, setMessage] = useState("");
 
   /* ===== SUBMIT ===== */
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!message.trim()) {
-      alert("Please fill out the message first.");
+    if (!message.trim() || !email.trim()) {
+      alert("Please fill out all fields.");
       return;
     }
 
-    const mailto = `mailto:blindshortgamer@gmail.com?subject=${encodeURIComponent(
-      subject || "Portfolio Contact"
-    )}&body=${encodeURIComponent(
-      `From: ${email}\n\n${message}`
-    )}`;
+    // You can replace 'your_formspree_id' with your actual Formspree ID
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkoylzwq";
 
-    window.location.href = mailto;
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          subject,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      } else {
+        alert("Oops! There was a problem sending your message.");
+      }
+    } catch (error) {
+      alert("Oops! There was a problem sending your message.");
+    }
   };
 
   return (

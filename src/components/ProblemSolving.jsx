@@ -34,7 +34,7 @@ export default function ProblemSolving() {
     },
     {
       id: "solved",
-      title: "125 Problems Solved — LeetCode",
+      title: "150+ Problems Solved — LeetCode",
       link: "https://leetcode.com/u/parth_mishra_0/",
       image: solvedImg,
       initial: { x: 120, rotate: 8 },

@@ -105,7 +105,7 @@ export default function About() {
               className="text-base md:text-[17px] leading-[1.55]"
               style={{ color: theme.paragraph }}
             >
-              I have solved <b>125+ problems on LeetCode</b> and
+              I have solved <b>150+ problems on LeetCode</b> (1500 contest rating) and
               <b> 200+ problems on CodeChef</b>, strengthening my analytical
               thinking and problem-solving skills.
             </p>
@@ -156,11 +156,11 @@ export default function About() {
                   exit={{ opacity: 0 }}
                   className="space-y-3 text-base leading-[1.55]"
                 >
-                  <li>• Languages: C, C++, JavaScript, Python</li>
-                  <li>• Frontend: React, HTML, CSS, Tailwind</li>
-                  <li>• Backend: Flask, REST APIs, SQL</li>
-                  <li>• Tools: Git, GitHub, Linux, VS Code</li>
-                  <li>• Core Concepts: DSA, OOP</li>
+                  <li>• Languages: Python3, C, C++17, JavaScript</li>
+                  <li>• Frontend: HTML, CSS, Tailwind CSS, React, Next.js, Redux</li>
+                  <li>• Backend: Node.js, Express.js, Flask, REST APIs, JWT, Axios</li>
+                  <li>• Databases: MongoDB, Mongoose, MongoDB Atlas, SQLite, SQL</li>
+                  <li>• Tools: Git, GitHub, VS Code, Postman, n8n, DSA, OOP</li>
                 </motion.ul>
               )}
 
@@ -187,15 +187,15 @@ export default function About() {
                     {[
                       {
                         title: "B.Tech — Computer Engineering",
-                        desc: "GNIOT, Greater Noida (2023 — Present)",
+                        desc: "GNIOT, Greater Noida (2023 — Present) | GPA: 7.3",
                       },
                       {
                         title: "Senior Secondary (XII)",
-                        desc: "International Hindu School (2021–22)",
+                        desc: "International Hindu School (2021–22) | 80%",
                       },
                       {
                         title: "Secondary (X)",
-                        desc: "International Hindu School (2019–20)",
+                        desc: "International Hindu School (2019–20) | 84%",
                       },
                     ].map((item, i) => (
                       <div key={i} className="relative">
