@@ -4,7 +4,7 @@ import { useTheme } from "@/context/ThemeContext";
 import useMagnetic from "@/hooks/useMagnetic";
 
 const roles = [
-  "Front End Developer",
+  "Full Stack Developer",
   "Problem Solver",
   "LLM Enthusiast",
   "Parth Mishra",
