@@ -8,6 +8,14 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Student Attendance Calculator",
+      desc: "A responsive tool for students to calculate, track, and manage their target attendance percentages easily.",
+      img: "/attendance-calc.png",
+      github: "https://github.com/Ptmishra69/attendance-calc",
+      demo: "https://toolassign.vercel.app",
+      tags: ["React", "Tailwind CSS", "Utility"],
+    },
+    {
       title: "Credex",
       desc: "AI-powered SaaS spend audit platform that helps founders monitor tool usage, estimate future costs, and optimize cloud expenditures through intelligent analytics.",
       img: "/credex.png",
